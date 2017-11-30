@@ -3,7 +3,7 @@ from pypet import load_trajectory
 from pypet.brian2.parameter import Brian2Parameter, \
                                    Brian2MonitorResult
 
-def load_trajectories(filename, brian2=False):
+def load_trajectories(filename, brian2=True):
 
     loading, idx = True, 0
     trajectories = []
@@ -35,6 +35,6 @@ def load_trajectories(filename, brian2=False):
     return trajectories
 
 
-def contained_trajectories(filename, brian2=False):
+def contained_trajectories(filename, brian2=True):
     trs = load_trajectories(filename, brian2)
     return [tr.name for tr in trs]
